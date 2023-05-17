@@ -1,0 +1,18 @@
+def happy(tic):
+    a1 = 0
+    a2 = 0
+    b = len(tic)
+    if b%2 == 0:
+        for i in range(0, b//2):
+            a1 = a1 + int(tic[0])
+            tic = tic[1:]
+        for i in range(b//2, b):
+            a2 = a2 + int(tic[0])
+            tic = tic[1:]
+    else:
+        return "введите билет с четным количеством знаков"
+    if a1 == a2:
+        return "это счастливый билет :)"
+    return "это не счастливый билет :("
+tic = str(input())
+print(happy(tic))
